@@ -1,0 +1,33 @@
+#Download URL
+https://www.jetbrains.com
+
+#make Maven project
+File -> New -> Project -> Maven
+
+#Add shade in pom.xml
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+            <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <filters>
+            <filter>
+              <artifact>*.*</artifact>
+              <excludes>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META_INF/*.DSA</exclude>
+                <exclude>META_INF/*.RSA</exclude>
+              </excludes>
+            </filter>
+          </filters>
+          <finalName>${project.artifactId}-cyberx-${project.version}</finalName>
+        </configuration>
+      </plugin>
