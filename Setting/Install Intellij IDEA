@@ -31,3 +31,5 @@ File -> New -> Project -> Maven
           <finalName>${project.artifactId}-cyberx-${project.version}</finalName>
         </configuration>
       </plugin>
+
+Ref : http://cyberx.tistory.com/143
