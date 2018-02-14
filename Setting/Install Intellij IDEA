@@ -39,15 +39,23 @@ File -> New -> Project -> Maven
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_2.11</artifactId>
-      <version>RELEASE</version>
-      <scope>provided</scope>
+      <version>2.1.1</version>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_2.11</artifactId>
-      <version>RELEASE</version>
-      <scope>provided</scope>
+      <version>2.1.1</version>
     </dependency>
     
-    
+
+#Code in Intellij
+
+package kr.co.bigster.airobonews
+import org.apache.spark.sql.SparkSession
+object dgText {
+  def main(args: Array[String]): Unit = {
+    val spark = SparkSession.builder().appName("dgText").config("spark.master","local").getOrCreate()
+    println("Spark dg")
+  }
+}
 Ref : http://cyberx.tistory.com/143
