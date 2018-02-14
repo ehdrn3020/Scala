@@ -1,8 +1,10 @@
 #Download URL
 https://www.jetbrains.com
 
+
 #make Maven project
 File -> New -> Project -> Maven
+
 
 #Add shade in pom.xml
       <plugin>
@@ -32,4 +34,20 @@ File -> New -> Project -> Maven
         </configuration>
       </plugin>
 
+
+#Add spark maven
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_2.11</artifactId>
+      <version>RELEASE</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_2.11</artifactId>
+      <version>RELEASE</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    
 Ref : http://cyberx.tistory.com/143
